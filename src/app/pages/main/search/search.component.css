@@ -9,5 +9,17 @@ mat-form-field {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 1vw;
+}
+
+@media (max-width: 420px) {
+  .form {
+    width: 90vw;
+    flex-direction: column;
+    margin-bottom: 5vh;
+  }
+  mat-form-field {
+    width: 90vw;
+  }
 }
 

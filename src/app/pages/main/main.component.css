@@ -8,6 +8,9 @@ mat-paginator {
   position: sticky;
   width: 80vw;
 }
+mat-expansion-panel {
+  margin-bottom: 3vh;
+}
 
 @media (max-width: 420px) {
   mat-paginator {
