@@ -10,13 +10,18 @@ import {MatButtonModule} from "@angular/material/button";
 import {MatIconModule} from "@angular/material/icon";
 import {MatChipsModule} from "@angular/material/chips";
 import {MatPaginatorModule} from "@angular/material/paginator";
+import {MatDialogModule} from "@angular/material/dialog";
+import { FilterDialogComponent } from './filter-dialog/filter-dialog.component';
+import {MatSliderModule} from "@angular/material/slider";
+import {FormsModule} from "@angular/forms";
 
 
 @NgModule({
   declarations: [
     MainComponent,
     DishComponent,
-    SearchComponent],
+    SearchComponent,
+    FilterDialogComponent],
   imports: [
     CommonModule,
     MatExpansionModule,
@@ -25,7 +30,10 @@ import {MatPaginatorModule} from "@angular/material/paginator";
     MatButtonModule,
     MatIconModule,
     MatChipsModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatDialogModule,
+    MatSliderModule,
+    FormsModule
   ]
 })
 export class MainModule {

@@ -47,6 +47,11 @@ mat-chip-set {
   .lg-chip {
     display: none;
   }
+  mat-card-title-group {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 @media (min-width: 420px) {

@@ -8,8 +8,8 @@
         <mat-chip *ngFor="let topic of dish.topics" color="primary" disableRipple class="lg-chip">
           {{topic}}
         </mat-chip>
-        <mat-chip color="primary" disableRipple class="sm-chip">
-          {{dish.topics[0]}}
+        <mat-chip *ngFor="let topic of dish.topics.slice(0, 1)" color="primary" disableRipple class="sm-chip">
+          {{topic}}
         </mat-chip>
       </mat-chip-set>
     </mat-panel-description>
@@ -20,7 +20,7 @@
         <mat-card-title-group>
           <img mat-card-md-image src="{{dish.url}}" alt="" loading="lazy">
           <mat-card-title>
-            <p><u>Опис</u>: {{dish.description}}</p>
+            <p>{{dish.description}}</p>
           </mat-card-title>
         </mat-card-title-group>
       </mat-card-header>

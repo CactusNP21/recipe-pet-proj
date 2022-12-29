@@ -17,6 +17,14 @@ export const mocked: MockedDishes[] = [
     topics: ["м'ясо", "майонез", "горох"]
   },
   {
+    title: "Крабові палички",
+    description: "дуже смачний салат з краба (ні) та любові",
+    price: 150,
+    time: 40,
+    url: "https://smachno.ua/wp-content/uploads/2018/11/26/salat-s-krabovymi-palochkami-i-kukuruzoj-1.png",
+    topics: ["риба", "майонез", "кукурудза"]
+  },
+  {
     description: "салат з м'ясом або ковбасою...",
     title: "Олів'є",
     price: 200 ,

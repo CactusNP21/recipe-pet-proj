@@ -8,3 +8,14 @@ mat-paginator {
   position: sticky;
   width: 80vw;
 }
+
+@media (max-width: 420px) {
+  mat-paginator {
+    width: 100%;
+    position: relative;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+  }
+
+
+}

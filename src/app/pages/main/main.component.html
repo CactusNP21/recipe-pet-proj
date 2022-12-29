@@ -8,8 +8,9 @@
   [length]="mocked.length"
   [pageSize]="5"
   [pageSizeOptions]="[5, 10, 25]"
+  [pageIndex]="pageIndex"
   aria-label="select-page"
-  (page)="log($event)"
+  (page)="changePage($event)"
   color="primary"
 >
 
