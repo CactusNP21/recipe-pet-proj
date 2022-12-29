@@ -1,0 +1,42 @@
+<mat-expansion-panel>
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      {{dish.title}}
+    </mat-panel-title>
+    <mat-panel-description>
+      <mat-chip-set>
+        <mat-chip *ngFor="let topic of dish.topics" color="primary" disableRipple class="lg-chip">
+          {{topic}}
+        </mat-chip>
+        <mat-chip color="primary" disableRipple class="sm-chip">
+          {{dish.topics[0]}}
+        </mat-chip>
+      </mat-chip-set>
+    </mat-panel-description>
+  </mat-expansion-panel-header>
+  <ng-template matExpansionPanelContent>
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title-group>
+          <img mat-card-md-image src="{{dish.url}}" alt="" loading="lazy">
+          <mat-card-title>
+            <p><u>Опис</u>: {{dish.description}}</p>
+          </mat-card-title>
+        </mat-card-title-group>
+      </mat-card-header>
+      <mat-card-content>
+
+      </mat-card-content>
+    </mat-card>
+    <div class="mat-detail">
+        <p>Оціночна <u>вартість</u> 3-х порцій: <span class="highlight">{{dish.price}} грн</span></p>
+        <p>Очікуваний <u>час</u> приготування: <span class="highlight">{{dish.time}} хв</span></p>
+      </div>
+    <mat-action-row>
+      <button mat-raised-button color="primary" class="det">Детальніше</button>
+      <button mat-raised-button>
+        <mat-icon>add</mat-icon>
+      </button>
+    </mat-action-row>
+  </ng-template>
+</mat-expansion-panel>

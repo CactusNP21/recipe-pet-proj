@@ -1,0 +1,10 @@
+mat-accordion {
+  width: 75vw;
+}
+mat-paginator {
+  z-index: 10;
+  margin: 0 auto;
+  bottom: 0;
+  position: sticky;
+  width: 80vw;
+}

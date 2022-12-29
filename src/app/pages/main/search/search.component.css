@@ -1,0 +1,10 @@
+mat-form-field {
+  width: 75vw;
+  margin: 0 auto;
+}
+form {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+}
+

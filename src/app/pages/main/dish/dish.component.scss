@@ -1,0 +1,56 @@
+
+mat-panel-title {
+  gap: 5vw;
+}
+
+
+mat-expansion-panel {
+  max-width: 75vw;
+  margin: 0 auto 1vw auto;
+
+}
+
+mat-card {
+  margin-bottom: 4vh;
+}
+
+mat-action-row {
+  justify-content: space-between;
+  button {
+    margin: 0;
+  }
+}
+
+.mat-detail {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 1vw;
+}
+.lg-chip {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+mat-chip-set {
+  flex-flow: nowrap;
+}
+
+@media (max-width: 420px) {
+  .mat-detail {
+    flex-direction: column;
+  }
+  mat-action-row {
+    flex-direction: column;
+    gap: 4vh;
+  }
+  .lg-chip {
+    display: none;
+  }
+}
+
+@media (min-width: 420px) {
+  .sm-chip {
+    display: none;
+  }
+}

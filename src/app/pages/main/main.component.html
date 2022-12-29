@@ -1,0 +1,16 @@
+<app-search></app-search>
+<mat-accordion multi>
+  <ng-container *ngFor="let dish of dishes">
+    <app-dish [dish]="dish"></app-dish>
+  </ng-container>
+</mat-accordion>
+<mat-paginator
+  [length]="mocked.length"
+  [pageSize]="5"
+  [pageSizeOptions]="[5, 10, 25]"
+  aria-label="select-page"
+  (page)="log($event)"
+  color="primary"
+>
+
+</mat-paginator>
