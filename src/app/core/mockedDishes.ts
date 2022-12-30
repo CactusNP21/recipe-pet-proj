@@ -11,8 +11,8 @@ export const mocked: MockedDishes[] = [
   {
     description: "салат з м'ясом або ковбасою...",
     title: "Олів'є",
-    price: 200 ,
-    time: 50,
+    price: 200,
+    time: 60,
     url: "https://i.imgur.com/I5vEgD5_d.webp?maxwidth=1520&fidelity=grand1",
     topics: ["м'ясо", "майонез", "горох"]
   },
@@ -25,33 +25,17 @@ export const mocked: MockedDishes[] = [
     topics: ["риба", "майонез", "кукурудза"]
   },
   {
-    description: "салат з м'ясом або ковбасою...",
-    title: "Олів'є",
-    price: 200 ,
-    time: 50,
+    title: "Грецький салат",
+    description: "салат з сиром фета та маслинами...",
+    price: 350,
+    time: 30,
     url: "https://i.imgur.com/I5vEgD5_d.webp?maxwidth=1520&fidelity=grand1",
-    topics: []
+    topics: ["фета", "маслини", "здорове харчування"]
   },
   {
     description: "салат з м'ясом або ковбасою...",
     title: "Олів'є",
-    price: 200 ,
-    time: 50,
-    url: "https://i.imgur.com/I5vEgD5_d.webp?maxwidth=1520&fidelity=grand1",
-    topics: ["м'ясо", "майонез", "горох"]
-  },
-  {
-    description: "салат з м'ясом або ковбасою...",
-    title: "Олів'є",
-    price: 200 ,
-    time: 50,
-    url: "https://i.imgur.com/I5vEgD5_d.webp?maxwidth=1520&fidelity=grand1",
-    topics: []
-  },
-  {
-    description: "салат з м'ясом або ковбасою...",
-    title: "Олів'є",
-    price: 200 ,
+    price: 200,
     time: 50,
     url: "https://i.imgur.com/I5vEgD5_d.webp?maxwidth=1520&fidelity=grand1",
     topics: ["м'ясо", "майонез", "горох"]
@@ -59,7 +43,7 @@ export const mocked: MockedDishes[] = [
   {
     description: "салат з м'ясом або ковбасою...",
     title: "Олів'є",
-    price: 200 ,
+    price: 200,
     time: 50,
     url: "https://i.imgur.com/I5vEgD5_d.webp?maxwidth=1520&fidelity=grand1",
     topics: []
@@ -67,7 +51,7 @@ export const mocked: MockedDishes[] = [
   {
     description: "салат з м'ясом або ковбасою...",
     title: "Олів'є",
-    price: 200 ,
+    price: 200,
     time: 50,
     url: "https://i.imgur.com/I5vEgD5_d.webp?maxwidth=1520&fidelity=grand1",
     topics: ["м'ясо", "майонез", "горох"]
@@ -75,7 +59,7 @@ export const mocked: MockedDishes[] = [
   {
     description: "салат з м'ясом або ковбасою...",
     title: "Олів'є",
-    price: 200 ,
+    price: 200,
     time: 50,
     url: "https://i.imgur.com/I5vEgD5_d.webp?maxwidth=1520&fidelity=grand1",
     topics: []
@@ -83,7 +67,7 @@ export const mocked: MockedDishes[] = [
   {
     description: "салат з м'ясом або ковбасою...",
     title: "Олів'є",
-    price: 200 ,
+    price: 200,
     time: 50,
     url: "https://i.imgur.com/I5vEgD5_d.webp?maxwidth=1520&fidelity=grand1",
     topics: ["м'ясо", "майонез", "горох"]
@@ -91,7 +75,7 @@ export const mocked: MockedDishes[] = [
   {
     description: "салат з м'ясом або ковбасою...",
     title: "Олів'є",
-    price: 200 ,
+    price: 200,
     time: 50,
     url: "https://i.imgur.com/I5vEgD5_d.webp?maxwidth=1520&fidelity=grand1",
     topics: []
@@ -99,7 +83,7 @@ export const mocked: MockedDishes[] = [
   {
     description: "салат з м'ясом або ковбасою...",
     title: "Олів'є",
-    price: 200 ,
+    price: 200,
     time: 50,
     url: "https://i.imgur.com/I5vEgD5_d.webp?maxwidth=1520&fidelity=grand1",
     topics: ["м'ясо", "майонез", "горох"]
@@ -107,7 +91,7 @@ export const mocked: MockedDishes[] = [
   {
     description: "салат з м'ясом або ковбасою...",
     title: "Олів'є",
-    price: 200 ,
+    price: 200,
     time: 50,
     url: "https://i.imgur.com/I5vEgD5_d.webp?maxwidth=1520&fidelity=grand1",
     topics: []
@@ -115,7 +99,7 @@ export const mocked: MockedDishes[] = [
   {
     description: "салат з м'ясом або ковбасою...",
     title: "Олів'є",
-    price: 200 ,
+    price: 200,
     time: 50,
     url: "https://i.imgur.com/I5vEgD5_d.webp?maxwidth=1520&fidelity=grand1",
     topics: ["м'ясо", "майонез", "горох"]
@@ -123,7 +107,7 @@ export const mocked: MockedDishes[] = [
   {
     description: "салат з м'ясом або ковбасою...",
     title: "Олів'є",
-    price: 200 ,
+    price: 200,
     time: 50,
     url: "https://i.imgur.com/I5vEgD5_d.webp?maxwidth=1520&fidelity=grand1",
     topics: []
@@ -131,7 +115,7 @@ export const mocked: MockedDishes[] = [
   {
     description: "салат з м'ясом або ковбасою...",
     title: "Олів'є",
-    price: 200 ,
+    price: 200,
     time: 50,
     url: "https://i.imgur.com/I5vEgD5_d.webp?maxwidth=1520&fidelity=grand1",
     topics: ["м'ясо", "майонез", "горох"]
@@ -139,7 +123,23 @@ export const mocked: MockedDishes[] = [
   {
     description: "салат з м'ясом або ковбасою...",
     title: "Олів'є",
-    price: 200 ,
+    price: 200,
+    time: 50,
+    url: "https://i.imgur.com/I5vEgD5_d.webp?maxwidth=1520&fidelity=grand1",
+    topics: []
+  },
+  {
+    description: "салат з м'ясом або ковбасою...",
+    title: "Олів'є",
+    price: 200,
+    time: 50,
+    url: "https://i.imgur.com/I5vEgD5_d.webp?maxwidth=1520&fidelity=grand1",
+    topics: ["м'ясо", "майонез", "горох"]
+  },
+  {
+    description: "салат з м'ясом або ковбасою...",
+    title: "Олів'є",
+    price: 200,
     time: 50,
     url: "https://i.imgur.com/I5vEgD5_d.webp?maxwidth=1520&fidelity=grand1",
     topics: []

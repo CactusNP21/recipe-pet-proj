@@ -1,24 +1,35 @@
-import {Component, OnInit} from '@angular/core';
-import {mocked} from "../../core/mockedDishes";
+import {Component} from '@angular/core';
+import {mocked, MockedDishes} from "../../core/mockedDishes";
 import {PageEvent} from "@angular/material/paginator";
+import {SearchService} from "./services/search.service";
+import {BehaviorSubject, Subject} from "rxjs";
+
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.css'],
 })
-export class MainComponent implements OnInit{
-  dishes = mocked
-  mocked = mocked
+export class MainComponent  {
+  dishesSubject = new Subject<MockedDishes[]>();
+  dishes$ = this.dishesSubject.asObservable();
+  pageItems: number;
   pageIndex: number;
-  ngOnInit() {
-    const pageIndex = !!sessionStorage.getItem('page') ? +sessionStorage.getItem('page')! : 0
-    this.pageIndex = pageIndex
-    this.dishes = mocked.slice(pageIndex * 5, pageIndex * 5 + 5)
+  pageSize: number = 5;
+  dishes: MockedDishes[]
+  constructor(private search: SearchService) {
+    search.getDishes().subscribe(dishes => {
+      console.log(dishes)
+      this.dishes = dishes
+      this.pageItems = dishes.length
+      this.dishesSubject.next(dishes.slice(0, this.pageSize))
+    })
   }
 
+
   changePage(event: PageEvent) {
-    sessionStorage.setItem('page', String(event.pageIndex))
-    this.dishes = mocked.slice((event.pageIndex * event.pageSize), (event.pageIndex * event.pageSize) + event.pageSize )
+    this.pageIndex = event.pageIndex
+    this.pageSize = event.pageSize
+    this.dishesSubject.next(this.dishes.slice((event.pageIndex * event.pageSize), (event.pageIndex * event.pageSize) + event.pageSize))
   }
 
 }

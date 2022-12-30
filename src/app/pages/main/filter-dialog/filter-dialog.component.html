@@ -1,26 +1,26 @@
 <h2 matDialogTitle>Задайте параметри бажаної страви</h2>
 <mat-dialog-content>
-  <p>Час приготування: {{minMinutes}} - {{maxMinutes}} хв</p>
+  <p>Час приготування: {{defaultSearchOption.minMinutes}} - {{defaultSearchOption.maxMinutes}} хв</p>
   <mat-slider
-    [min]="0"
+    [min]="15"
     [max]="240"
-    [step]="5"
+    [step]="15"
   >
-    <input matSliderStartThumb [(ngModel)]="minMinutes">
-    <input matSliderEndThumb [(ngModel)]="maxMinutes">
+    <input matSliderStartThumb [(ngModel)]="defaultSearchOption.minMinutes">
+    <input matSliderEndThumb [(ngModel)]="defaultSearchOption.maxMinutes">
   </mat-slider>
 
-  <p>Вартість: {{minPrice}} - {{maxPrice}} грн</p>
+  <p>Вартість: {{defaultSearchOption.minPrice}} - {{defaultSearchOption.maxPrice}} грн</p>
   <mat-slider
-    [min]="50"
+    [min]="100"
     [max]="1000"
-    [step]="50"
+    [step]="100"
   >
-    <input matSliderStartThumb [(ngModel)]="minPrice">
-    <input matSliderEndThumb [(ngModel)]="maxPrice">
+    <input matSliderStartThumb [(ngModel)]="defaultSearchOption.minPrice">
+    <input matSliderEndThumb [(ngModel)]="defaultSearchOption.maxPrice">
   </mat-slider>
 
   <div mat-dialog-actions>
-    <button mat-button [mat-dialog-close]="{maxMinutes, maxPrice, minPrice, minMinutes}" cdkFocusInitial color="primary">Застосувати</button>
+    <button mat-button [mat-dialog-close]="defaultSearchOption" cdkFocusInitial color="primary">Застосувати</button>
   </div>
 </mat-dialog-content>

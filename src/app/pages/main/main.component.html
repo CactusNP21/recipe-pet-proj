@@ -1,11 +1,11 @@
 <app-search></app-search>
 <mat-accordion multi>
-  <ng-container *ngFor="let dish of dishes">
+  <ng-container *ngFor="let dish of dishes$ | async">
     <app-dish [dish]="dish"></app-dish>
   </ng-container>
 </mat-accordion>
 <mat-paginator
-  [length]="mocked.length"
+  [length]="pageItems"
   [pageSize]="5"
   [pageSizeOptions]="[5, 10, 25]"
   [pageIndex]="pageIndex"

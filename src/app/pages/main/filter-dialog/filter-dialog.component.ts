@@ -1,17 +1,19 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {SearchService} from "../services/search.service";
+import {defaultSearchOption} from "../../../core/search-options";
 
 @Component({
   selector: 'app-filter-dialog',
   templateUrl: './filter-dialog.component.html',
   styleUrls: ['./filter-dialog.component.scss']
 })
-export class FilterDialogComponent {
-  minMinutes = 30
-  maxMinutes = 90
+export class FilterDialogComponent implements OnInit {
+  defaultSearchOption = defaultSearchOption ;
 
-  minPrice = 50
-  maxPrice = 200
+  constructor(private search: SearchService) {
+  }
 
-
+  ngOnInit() {
+  }
 
 }
