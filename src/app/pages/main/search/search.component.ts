@@ -20,6 +20,7 @@ export class SearchComponent {
   openDialog() {
     const dialogRef = this.dialog.open(FilterDialogComponent)
     dialogRef.afterClosed().subscribe(value => {
+      console.log(value)
       this.searchS.sendSearchOptions(value)
     })
   }

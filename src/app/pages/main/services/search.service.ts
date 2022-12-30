@@ -16,9 +16,11 @@ export class SearchService {
   searchOptions$ = this.searchOptionsSubject.asObservable();
   searchOptions: SearchOptions = defaultSearchOption;
   value: string = ''
+
   private between(min: number, max: number, number: number): boolean {
     return number >= min && max >= number
   }
+
   constructor() {
     setTimeout(() => {
       this.search()
@@ -35,24 +37,29 @@ export class SearchService {
       this.search()
     })
   }
+
   search() {
     const filtered = mocked.filter(dish => {
-      const {minMinutes, maxMinutes, minPrice, maxPrice} = this.searchOptions
+      const {minMinutes, maxMinutes, minPrice, maxPrice, topics} = this.searchOptions
       return (
         this.between(minPrice, maxPrice, dish.price) &&
         this.between(minMinutes, maxMinutes, dish.time) &&
-        dish.title.toLowerCase().includes(this.value)
+        dish.title.toLowerCase().includes(this.value) &&
+        topics.every((value1) => dish.topics.includes(value1.toLowerCase()))
       )
     })
     console.log(filtered)
     this.dishes.next(filtered)
   }
+
   sendSearchOptions(value: SearchOptions) {
     this.searchOptionsSubject.next(value)
   }
+
   sendSearchValue(value: string) {
     this.searchSubject.next(value)
   }
+
   getDishes() {
     return this.dishes.asObservable()
   }

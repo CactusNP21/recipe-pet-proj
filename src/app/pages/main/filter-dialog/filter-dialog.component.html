@@ -19,7 +19,25 @@
     <input matSliderStartThumb [(ngModel)]="defaultSearchOption.minPrice">
     <input matSliderEndThumb [(ngModel)]="defaultSearchOption.maxPrice">
   </mat-slider>
-
+  <mat-form-field appearance="outline">
+    <mat-label>Ключові слова</mat-label>
+    <mat-chip-grid #topicGrid>
+      <mat-chip-row *ngFor="let topic of topics" (removed)="removeTopic(topic)">
+        {{topic}}
+        <button matChipRemove aria-label="'remove ' + keyword">
+          <mat-icon>cancel</mat-icon>
+        </button>
+      </mat-chip-row>
+    </mat-chip-grid>
+    <div class="test"><input placeholder="М'ясо, риба..."
+              [matChipInputFor]="topicGrid"
+              [(ngModel)]="topic"
+    />
+      <button *ngIf="topic" matSuffix mat-icon-button (click)="addTopic(); topic = ''; ">
+        <mat-icon>add</mat-icon>
+      </button>
+    </div>
+  </mat-form-field>
   <div mat-dialog-actions>
     <button mat-button [mat-dialog-close]="defaultSearchOption" cdkFocusInitial color="primary">Застосувати</button>
   </div>
