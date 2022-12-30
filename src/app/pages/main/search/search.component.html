@@ -1,7 +1,14 @@
 <div class="form">
   <mat-form-field >
     <mat-label>Пошук страви</mat-label>
-    <input matInput placeholder="Олів'є...">
+    <input matInput placeholder="Олів'є..." [(ngModel)]="searchValue">
+    <button *ngIf="searchValue" matSuffix mat-icon-button color="warn" (click)="searchValue = ''">
+      <mat-icon>clear</mat-icon>
+    </button>
+    <button *ngIf="searchValue" matSuffix mat-icon-button>
+      <mat-icon>search</mat-icon>
+    </button>
+
   </mat-form-field>
   <button mat-raised-button color="primary" (click)="openDialog()">Фільтр</button>
 </div>

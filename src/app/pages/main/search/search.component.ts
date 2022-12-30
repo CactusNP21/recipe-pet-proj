@@ -10,6 +10,9 @@ import {FilterDialogComponent} from "../filter-dialog/filter-dialog.component";
 export class SearchComponent {
   constructor(private dialog: MatDialog) {
   }
+
+  searchValue = ''
+
   openDialog() {
     const dialogRef = this.dialog.open(FilterDialogComponent)
     dialogRef.afterClosed().subscribe(value => {
