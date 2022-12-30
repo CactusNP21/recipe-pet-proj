@@ -6,6 +6,7 @@ import {RouterOutlet} from "@angular/router";
 import {AppRoutingModule} from "./app-routing.module";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MainModule} from "./pages/main/main.module";
+import {DetailModule} from "./pages/detail/detail.module";
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import {MainModule} from "./pages/main/main.module";
     RouterOutlet,
     AppRoutingModule,
     BrowserAnimationsModule,
+    DetailModule,
     MainModule
   ],
   providers: [],

@@ -1,0 +1,40 @@
+mat-card {
+  width: 70vw;
+  margin: 0 auto;
+
+}
+
+
+
+@media (min-width: 420px) {
+  .mobile {
+    display: none;
+  }
+}
+
+@media (max-width: 900px) {
+
+
+  mat-card {
+    width: 95vw;
+  }
+
+}
+
+@media (max-width: 420px) {
+  .desktop{
+    display: none;
+  }
+  mat-card-subtitle {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  mat-card-title {
+    text-align: center;
+    margin-bottom: 3vh;
+  }
+}
+
+
+

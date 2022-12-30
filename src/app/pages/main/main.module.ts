@@ -14,6 +14,7 @@ import {MatDialogModule} from "@angular/material/dialog";
 import { FilterDialogComponent } from './filter-dialog/filter-dialog.component';
 import {MatSliderModule} from "@angular/material/slider";
 import {FormsModule} from "@angular/forms";
+import {RouterLink} from "@angular/router";
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import {FormsModule} from "@angular/forms";
     MatPaginatorModule,
     MatDialogModule,
     MatSliderModule,
-    FormsModule
+    FormsModule,
+    RouterLink
   ]
 })
 export class MainModule {

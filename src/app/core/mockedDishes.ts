@@ -1,4 +1,5 @@
 export interface MockedDishes {
+  id: string
   title: string
   url: string
   description: string
@@ -9,6 +10,7 @@ export interface MockedDishes {
 
 export const mocked: MockedDishes[] = [
   {
+    id: '0',
     description: "салат з м'ясом або ковбасою...",
     title: "Олів'є",
     price: 200,
@@ -17,6 +19,7 @@ export const mocked: MockedDishes[] = [
     topics: ["м'ясо", "майонез", "горох"]
   },
   {
+    id: '1',
     title: "Крабові палички",
     description: "дуже смачний салат з краба (ні) та любові",
     price: 150,
@@ -25,6 +28,7 @@ export const mocked: MockedDishes[] = [
     topics: ["риба", "майонез", "кукурудза"]
   },
   {
+    id: '2',
     title: "Грецький салат",
     description: "салат з сиром фета та маслинами...",
     price: 350,
@@ -32,116 +36,5 @@ export const mocked: MockedDishes[] = [
     url: "https://i.imgur.com/I5vEgD5_d.webp?maxwidth=1520&fidelity=grand1",
     topics: ["фета", "маслини", "здорове харчування"]
   },
-  {
-    description: "салат з м'ясом або ковбасою...",
-    title: "Олів'є",
-    price: 200,
-    time: 50,
-    url: "https://i.imgur.com/I5vEgD5_d.webp?maxwidth=1520&fidelity=grand1",
-    topics: ["м'ясо", "майонез", "горох"]
-  },
-  {
-    description: "салат з м'ясом або ковбасою...",
-    title: "Олів'є",
-    price: 200,
-    time: 50,
-    url: "https://i.imgur.com/I5vEgD5_d.webp?maxwidth=1520&fidelity=grand1",
-    topics: []
-  },
-  {
-    description: "салат з м'ясом або ковбасою...",
-    title: "Олів'є",
-    price: 200,
-    time: 50,
-    url: "https://i.imgur.com/I5vEgD5_d.webp?maxwidth=1520&fidelity=grand1",
-    topics: ["м'ясо", "майонез", "горох"]
-  },
-  {
-    description: "салат з м'ясом або ковбасою...",
-    title: "Олів'є",
-    price: 200,
-    time: 50,
-    url: "https://i.imgur.com/I5vEgD5_d.webp?maxwidth=1520&fidelity=grand1",
-    topics: []
-  },
-  {
-    description: "салат з м'ясом або ковбасою...",
-    title: "Олів'є",
-    price: 200,
-    time: 50,
-    url: "https://i.imgur.com/I5vEgD5_d.webp?maxwidth=1520&fidelity=grand1",
-    topics: ["м'ясо", "майонез", "горох"]
-  },
-  {
-    description: "салат з м'ясом або ковбасою...",
-    title: "Олів'є",
-    price: 200,
-    time: 50,
-    url: "https://i.imgur.com/I5vEgD5_d.webp?maxwidth=1520&fidelity=grand1",
-    topics: []
-  },
-  {
-    description: "салат з м'ясом або ковбасою...",
-    title: "Олів'є",
-    price: 200,
-    time: 50,
-    url: "https://i.imgur.com/I5vEgD5_d.webp?maxwidth=1520&fidelity=grand1",
-    topics: ["м'ясо", "майонез", "горох"]
-  },
-  {
-    description: "салат з м'ясом або ковбасою...",
-    title: "Олів'є",
-    price: 200,
-    time: 50,
-    url: "https://i.imgur.com/I5vEgD5_d.webp?maxwidth=1520&fidelity=grand1",
-    topics: []
-  },
-  {
-    description: "салат з м'ясом або ковбасою...",
-    title: "Олів'є",
-    price: 200,
-    time: 50,
-    url: "https://i.imgur.com/I5vEgD5_d.webp?maxwidth=1520&fidelity=grand1",
-    topics: ["м'ясо", "майонез", "горох"]
-  },
-  {
-    description: "салат з м'ясом або ковбасою...",
-    title: "Олів'є",
-    price: 200,
-    time: 50,
-    url: "https://i.imgur.com/I5vEgD5_d.webp?maxwidth=1520&fidelity=grand1",
-    topics: []
-  },
-  {
-    description: "салат з м'ясом або ковбасою...",
-    title: "Олів'є",
-    price: 200,
-    time: 50,
-    url: "https://i.imgur.com/I5vEgD5_d.webp?maxwidth=1520&fidelity=grand1",
-    topics: ["м'ясо", "майонез", "горох"]
-  },
-  {
-    description: "салат з м'ясом або ковбасою...",
-    title: "Олів'є",
-    price: 200,
-    time: 50,
-    url: "https://i.imgur.com/I5vEgD5_d.webp?maxwidth=1520&fidelity=grand1",
-    topics: []
-  },
-  {
-    description: "салат з м'ясом або ковбасою...",
-    title: "Олів'є",
-    price: 200,
-    time: 50,
-    url: "https://i.imgur.com/I5vEgD5_d.webp?maxwidth=1520&fidelity=grand1",
-    topics: ["м'ясо", "майонез", "горох"]
-  },
-  {
-    description: "салат з м'ясом або ковбасою...",
-    title: "Олів'є",
-    price: 200,
-    time: 50,
-    url: "https://i.imgur.com/I5vEgD5_d.webp?maxwidth=1520&fidelity=grand1",
-    topics: []
-  }
+
 ]

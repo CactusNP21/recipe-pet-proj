@@ -48,7 +48,6 @@ export class SearchService {
         topics.every((value1) => dish.topics.includes(value1.toLowerCase()))
       )
     })
-    console.log(filtered)
     this.dishes.next(filtered)
   }
 
