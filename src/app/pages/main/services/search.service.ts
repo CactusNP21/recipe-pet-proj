@@ -32,6 +32,7 @@ export class SearchService {
     })
     this.searchValue$.subscribe(value => {
       this.value = value
+      this.search()
     })
   }
   search() {
@@ -40,7 +41,7 @@ export class SearchService {
       return (
         this.between(minPrice, maxPrice, dish.price) &&
         this.between(minMinutes, maxMinutes, dish.time) &&
-        dish.title.includes(this.value)
+        dish.title.toLowerCase().includes(this.value)
       )
     })
     console.log(filtered)
