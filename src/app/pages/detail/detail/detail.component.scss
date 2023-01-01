@@ -1,7 +1,44 @@
+.detail {
+  display: flex;
+  flex-direction: row;
+}
+.servings {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  mat-form-field {
+    border: 0;
+    width: 40%;
+  }
+}
+
+.title-card {
+  display: flex;
+  flex-direction: row;
+  gap: 5vw;
+}
+
 mat-card {
   width: 70vw;
-  margin: 0 auto;
+  margin: 5vh auto;
 
+}
+
+mat-card-subtitle {
+  position: relative;
+  left: 5rem;
+}
+
+mat-vertical-stepper {
+  width: 80%;
+  margin: 0 auto;
+}
+
+mat-card-header {
+  padding-bottom: 3vh;
 }
 
 
@@ -22,17 +59,45 @@ mat-card {
 }
 
 @media (max-width: 420px) {
+  mat-card {
+    margin: 2vh auto;
+  }
+  mat-vertical-stepper {
+    width: 100%;
+    margin: 0 auto;
+  }
+  mat-card-title-group {
+    align-items: center;
+    justify-content: center;
+  }
+  mat-card-subtitle {
+    left: 0;
+  }
+  mat-list {
+    position: relative;
+    right: 20%;
+  }
   .desktop{
     display: none;
   }
   mat-card-subtitle {
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
     align-items: center;
   }
   mat-card-title {
     text-align: center;
-    margin-bottom: 3vh;
+
+  }
+  .title-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3vh;
+    div {
+      word-break: break-word;
+    }
   }
 }
 

@@ -6,6 +6,9 @@ import {MatListModule} from "@angular/material/list";
 import {MatIconModule} from "@angular/material/icon";
 import {MatStepperModule} from "@angular/material/stepper";
 import {MatButtonModule} from "@angular/material/button";
+import {MatSidenavModule} from "@angular/material/sidenav";
+import {MatInputModule} from "@angular/material/input";
+import {FormsModule} from "@angular/forms";
 
 
 
@@ -19,7 +22,10 @@ import {MatButtonModule} from "@angular/material/button";
     MatListModule,
     MatIconModule,
     MatStepperModule,
-    MatButtonModule
+    MatButtonModule,
+    MatSidenavModule,
+    MatInputModule,
+    FormsModule
   ]
 })
 export class DetailModule { }

@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {mocked, MockedDishes} from "../../../core/mockedDishes";
 
 @Component({
@@ -10,8 +10,12 @@ import {mocked, MockedDishes} from "../../../core/mockedDishes";
 export class DetailComponent implements OnInit {
 
   dish: MockedDishes
+  servings = 3
+  constructor(private route: ActivatedRoute, private router: Router) {
+  }
 
-  constructor(private route: ActivatedRoute) {
+  home() {
+    this.router.navigate(['main'])
   }
   ngOnInit() {
     this.route.queryParams.subscribe(params => {

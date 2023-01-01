@@ -5,7 +5,9 @@ export interface MockedDishes {
   description: string
   time: number
   price: number,
-  topics: string[]
+  topics: string[],
+  ingredients: { name: string, count: string, unit: string }[]
+  steps: { title: string, description: string }[]
 }
 
 export const mocked: MockedDishes[] = [
@@ -16,7 +18,19 @@ export const mocked: MockedDishes[] = [
     price: 200,
     time: 60,
     url: "https://i.imgur.com/I5vEgD5_d.webp?maxwidth=1520&fidelity=grand1",
-    topics: ["м'ясо", "майонез", "горох"]
+    topics: ["м'ясо", "майонез", "горох"],
+    ingredients: [
+      {name: "Горох", count: "50", unit: "г"},
+      {name: "Горох", count: "50", unit: "г"},
+      {name: "Горох", count: "50", unit: "г"}
+    ],
+    steps: [
+      {title: "Підготуємо овочі", description: "Миємо моркву, картоплю..."},
+      {title: "Підготуємо овочі", description: "Миємо моркву, картоплю..."},
+      {title: "Підготуємо овочі", description: "Миємо моркву, картоплю..."},
+      {title: "Підготуємо овочі", description: "Миємо моркву, картоплю..."},
+
+    ]
   },
   {
     id: '1',
@@ -25,7 +39,9 @@ export const mocked: MockedDishes[] = [
     price: 150,
     time: 40,
     url: "https://smachno.ua/wp-content/uploads/2018/11/26/salat-s-krabovymi-palochkami-i-kukuruzoj-1.png",
-    topics: ["риба", "майонез", "кукурудза"]
+    topics: ["риба", "майонез", "кукурудза"],
+    ingredients: [],
+    steps: []
   },
   {
     id: '2',
@@ -34,7 +50,9 @@ export const mocked: MockedDishes[] = [
     price: 350,
     time: 30,
     url: "https://i.imgur.com/I5vEgD5_d.webp?maxwidth=1520&fidelity=grand1",
-    topics: ["фета", "маслини", "здорове харчування"]
+    topics: ["фета", "маслини", "здорове харчування"],
+    ingredients: [],
+    steps: []
   },
 
 ]

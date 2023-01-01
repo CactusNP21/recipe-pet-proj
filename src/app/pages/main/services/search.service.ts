@@ -44,8 +44,8 @@ export class SearchService {
       return (
         this.between(minPrice, maxPrice, dish.price) &&
         this.between(minMinutes, maxMinutes, dish.time) &&
-        dish.title.toLowerCase().includes(this.value) &&
-        topics.every((value1) => dish.topics.includes(value1.toLowerCase()))
+        dish.title.toLowerCase().includes(this.value.toLowerCase()) &&
+        topics.every((value1) => dish.topics.toLocaleString().includes(value1.toLowerCase()))
       )
     })
     this.dishes.next(filtered)
