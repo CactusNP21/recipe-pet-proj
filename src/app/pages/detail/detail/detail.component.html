@@ -18,7 +18,7 @@
         <div class="servings">
           <div>Порцій:</div>
           <mat-form-field appearance="outline" subscriptSizing="fixed">
-            <input matInput type="number" [(ngModel)]="servings">
+            <input matInput type="number" [(ngModel)]="servings" disabled>
             <button matSuffix mat-icon-button (click)="servings = servings + 1">
               <mat-icon>add</mat-icon>
             </button>
