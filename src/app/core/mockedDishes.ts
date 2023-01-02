@@ -21,8 +21,13 @@ export const mocked: MockedDishes[] = [
     topics: ["м'ясо", "майонез", "горох"],
     ingredients: [
       {name: "Горох", count: "50", unit: "г"},
-      {name: "Горох", count: "50", unit: "г"},
-      {name: "Горох", count: "50", unit: "г"}
+      {name: "Морква", count: "50", unit: "г"},
+      {name: "Майонез", count: "100", unit: "г"},
+      {name: "Філе куряче", count: "100", unit: "г"},
+      {name: "Яйця", count: "1", unit: "шт"},
+      {name: "Картошка", count: "100", unit: "г"},
+      {name: "Огірки солоні/свіжі", count: "100", unit: "г"},
+      {name: "Цибуля 'Марс' ", count: "15", unit: "г"},
     ],
     steps: [
       {title: "Підготуємо овочі", description: "Миємо моркву, картоплю..."},

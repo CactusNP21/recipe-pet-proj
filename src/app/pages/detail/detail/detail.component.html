@@ -22,7 +22,7 @@
             <button matSuffix mat-icon-button (click)="servings = servings + 1">
               <mat-icon>add</mat-icon>
             </button>
-            <button matPrefix mat-icon-button (click)="servings = servings - 1">
+            <button matPrefix mat-icon-button (click)="removeServ()">
               <mat-icon>remove</mat-icon>
             </button>
           </mat-form-field>
@@ -36,7 +36,7 @@
         <mat-list>
           <mat-list-item *ngFor="let ingredients of dish.ingredients">
             <mat-icon matListItemIcon color="primary">horizontal_rule</mat-icon>
-            <div>{{ingredients.name}}: {{+ingredients.count * servings}} {{ingredients.unit}}</div>
+            <div class="ingredient">{{ingredients.name}}: <span class="highlight">{{+ingredients.count * servings}} {{ingredients.unit}}</span></div>
           </mat-list-item>
         </mat-list>
 
