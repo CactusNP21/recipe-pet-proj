@@ -1,1 +1,8 @@
-<p>summary works!</p>
+<ng-container *ngFor="let dish of summary">
+  <app-detail [dish]="dish">
+
+  </app-detail>
+</ng-container>
+
+
+

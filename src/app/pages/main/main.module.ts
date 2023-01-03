@@ -15,6 +15,7 @@ import { FilterDialogComponent } from './filter-dialog/filter-dialog.component';
 import {MatSliderModule} from "@angular/material/slider";
 import {FormsModule} from "@angular/forms";
 import {RouterLink} from "@angular/router";
+import {FeatureModule} from "../../feature/feature.module";
 
 
 @NgModule({

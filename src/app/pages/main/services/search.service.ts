@@ -22,9 +22,6 @@ export class SearchService {
   }
 
   constructor() {
-    setTimeout(() => {
-      this.search()
-    }, 0)
     this.searchOptions$.subscribe(options => {
       console.log(options)
       if (options) {
@@ -37,7 +34,20 @@ export class SearchService {
       this.search()
     })
   }
-
+  added(dish: MockedDishes) {
+    const found = mocked.find(value1 => value1.id === dish.id)
+    if (found) {
+      found.added = true
+    }
+    console.log(mocked)
+  }
+  removed(dish: MockedDishes) {
+    const found = mocked.find(value1 => value1.id === dish.id)
+    if (found) {
+      found.added = false
+    }
+    console.log(mocked)
+  }
   search() {
     const filtered = mocked.filter(dish => {
       const {minMinutes, maxMinutes, minPrice, maxPrice, topics} = this.searchOptions
@@ -45,7 +55,7 @@ export class SearchService {
         this.between(minPrice, maxPrice, dish.price) &&
         this.between(minMinutes, maxMinutes, dish.time) &&
         dish.title.toLowerCase().includes(this.value.toLowerCase()) &&
-        topics.every((value1) => dish.topics.toLocaleString().includes(value1.toLowerCase()))
+        topics.every((value1) => dish.topics.includes(value1.toLowerCase()))
       )
     })
     this.dishes.next(filtered)

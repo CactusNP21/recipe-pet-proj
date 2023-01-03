@@ -1,0 +1,10 @@
+<div>
+  <button mat-icon-button [matBadge]=len [routerLink]="['main/summary']" *ngIf="!summaryPage">
+    <mat-icon>list</mat-icon>
+  </button>
+
+  <button mat-icon-button [routerLink]="['main']" *ngIf="homePage">
+    <mat-icon>home</mat-icon>
+  </button>
+</div>
+

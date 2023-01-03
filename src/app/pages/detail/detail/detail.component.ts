@@ -1,6 +1,7 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {mocked, MockedDishes} from "../../../core/mockedDishes";
+import {Subscription} from "rxjs";
 
 @Component({
   selector: 'app-detail',
@@ -8,8 +9,7 @@ import {mocked, MockedDishes} from "../../../core/mockedDishes";
   styleUrls: ['./detail.component.scss']
 })
 export class DetailComponent implements OnInit {
-
-  dish: MockedDishes
+  @Input() dish: MockedDishes
   servings = 3
 
   constructor(private route: ActivatedRoute, private router: Router) {
@@ -24,11 +24,14 @@ export class DetailComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.route.queryParams.subscribe(params => {
-      this.dish = mocked.find(value => value.id === params['id'])!; // TODO fix undefined error
-      console.log(this.dish)
+    console.log(this.dish)
+    const sub: Subscription = this.route.queryParams.subscribe(params => {
+      if (params['id']) {
+        this.dish = mocked.find(value => value.id === params['id'])!; // TODO fix undefined error
+        console.log(this.dish)
+      }
     });
+    sub.unsubscribe()
   }
 }
-
 

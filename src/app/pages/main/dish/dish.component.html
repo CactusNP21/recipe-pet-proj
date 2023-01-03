@@ -34,8 +34,11 @@
               [routerLink]="['dish']" [queryParams]="{id: dish.id}">
         Детальніше
       </button>
-      <button mat-icon-button matIconSuffix color="primary">
+      <button mat-icon-button matIconSuffix class="add" *ngIf="!dish.added" (click)="addDish()">
         <mat-icon>add</mat-icon>
+      </button>
+      <button mat-icon-button matIconSuffix class="remove"  *ngIf="dish.added" (click)="removeDish()">
+        <mat-icon>remove</mat-icon>
       </button>
     </mat-action-row>
   </ng-template>

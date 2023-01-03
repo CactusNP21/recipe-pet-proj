@@ -1,3 +1,13 @@
+.add {
+  background-color: rgb(0, 44, 148);
+  color: white;
+}
+
+.remove {
+  background-color: #c30000;
+  color: white;
+}
+
 
 mat-panel-title {
   gap: 5vw;
@@ -16,6 +26,7 @@ mat-card {
 
 mat-action-row {
   justify-content: space-between;
+  align-items: center;
   button {
     margin: 0;
   }

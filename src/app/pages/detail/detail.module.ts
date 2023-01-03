@@ -13,19 +13,22 @@ import {FormsModule} from "@angular/forms";
 
 
 @NgModule({
-  declarations: [
-    DetailComponent
-  ],
-  imports: [
-    CommonModule,
-    MatCardModule,
-    MatListModule,
-    MatIconModule,
-    MatStepperModule,
-    MatButtonModule,
-    MatSidenavModule,
-    MatInputModule,
-    FormsModule
-  ]
+    declarations: [
+        DetailComponent
+    ],
+    exports: [
+        DetailComponent
+    ],
+    imports: [
+        CommonModule,
+        MatCardModule,
+        MatListModule,
+        MatIconModule,
+        MatStepperModule,
+        MatButtonModule,
+        MatSidenavModule,
+        MatInputModule,
+        FormsModule
+    ]
 })
 export class DetailModule { }

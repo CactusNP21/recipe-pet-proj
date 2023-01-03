@@ -8,6 +8,7 @@ export interface MockedDishes {
   topics: string[],
   ingredients: { name: string, count: string, unit: string }[]
   steps: { title: string, description: string }[]
+  added?: boolean
 }
 
 export const mocked: MockedDishes[] = [

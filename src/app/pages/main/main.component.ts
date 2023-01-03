@@ -19,10 +19,8 @@ export class MainComponent implements OnInit, OnDestroy{
   sub: Subscription
   constructor(private search: SearchService) {
     this.sub = search.getDishes().subscribe(dishes => {
-      console.log(dishes)
       this.dishes = dishes
       this.pageItems = dishes.length
-      console.log(dishes.slice(0, this.pageSize))
       this.dishesSubject.next(dishes.slice(0, this.pageSize))
     })
   }
