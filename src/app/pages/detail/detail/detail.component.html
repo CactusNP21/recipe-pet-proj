@@ -4,9 +4,6 @@
       <mat-card-title>
 
         <div class="title-card">
-          <button mat-raised-button color="warn" (click)="home()">
-            Назад
-          </button>
           <div>
             {{dish.title}}
           </div>
@@ -64,6 +61,10 @@
     </mat-vertical-stepper>
 
   </mat-card-content>
+  <mat-action-row>
+    <button color="primary" mat-flat-button (click)="addToList()" *ngIf="!dish.added">Додати в список</button>
+    <button color="warn" mat-flat-button (click)="removeFromList()" *ngIf="dish.added">Видалити зі списку</button>
+  </mat-action-row>
 </mat-card>
 
 

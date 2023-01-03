@@ -54,6 +54,12 @@ mat-card-header {
 .price {
   color: darkgreen;
 }
+mat-action-row {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  padding: 1vh;
+}
 
 @media (min-width: 420px) {
   .mobile {

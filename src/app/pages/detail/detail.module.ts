@@ -9,6 +9,7 @@ import {MatButtonModule} from "@angular/material/button";
 import {MatSidenavModule} from "@angular/material/sidenav";
 import {MatInputModule} from "@angular/material/input";
 import {FormsModule} from "@angular/forms";
+import {MatExpansionModule} from "@angular/material/expansion";
 
 
 
@@ -19,16 +20,17 @@ import {FormsModule} from "@angular/forms";
     exports: [
         DetailComponent
     ],
-    imports: [
-        CommonModule,
-        MatCardModule,
-        MatListModule,
-        MatIconModule,
-        MatStepperModule,
-        MatButtonModule,
-        MatSidenavModule,
-        MatInputModule,
-        FormsModule
-    ]
+  imports: [
+    CommonModule,
+    MatCardModule,
+    MatListModule,
+    MatIconModule,
+    MatStepperModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatInputModule,
+    FormsModule,
+    MatExpansionModule
+  ]
 })
 export class DetailModule { }

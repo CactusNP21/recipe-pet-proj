@@ -2,6 +2,8 @@ import {Component, Input, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {mocked, MockedDishes} from "../../../core/mockedDishes";
 import {Subscription} from "rxjs";
+import {SummaryService} from "../../summary/services/summary.service";
+import {SearchService} from "../../main/services/search.service";
 
 @Component({
   selector: 'app-detail',
@@ -12,15 +14,20 @@ export class DetailComponent implements OnInit {
   @Input() dish: MockedDishes
   servings = 3
 
-  constructor(private route: ActivatedRoute, private router: Router) {
+  constructor(private route: ActivatedRoute, private summaryService: SummaryService, private mocked: SearchService) {
   }
 
   removeServ() {
     this.servings = this.servings === 1 ? this.servings : this.servings - 1
   }
 
-  home() {
-    this.router.navigate(['main'])
+  addToList() {
+    this.summaryService.sendDish(this.dish)
+    this.mocked.added(this.dish)
+  }
+  removeFromList() {
+    this.summaryService.removeDish(this.dish)
+    this.mocked.removed(this.dish)
   }
 
   ngOnInit() {

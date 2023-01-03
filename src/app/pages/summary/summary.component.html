@@ -1,4 +1,4 @@
-<ng-container *ngFor="let dish of summary">
+<ng-container *ngFor="let dish of test$| async">
   <app-detail [dish]="dish">
 
   </app-detail>
