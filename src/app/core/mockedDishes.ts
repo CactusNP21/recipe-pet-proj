@@ -6,9 +6,13 @@ export interface MockedDishes {
   time: number
   price: number,
   topics: string[],
-  ingredients: { name: string, count: string, unit: string }[]
+  ingredients: Ingredients[]
   steps: { title: string, description: string }[]
   added?: boolean
+}
+
+export interface Ingredients {
+  name: string, count: string, unit: string
 }
 
 export const mocked: MockedDishes[] = [
@@ -46,14 +50,21 @@ export const mocked: MockedDishes[] = [
     time: 40,
     url: "https://smachno.ua/wp-content/uploads/2018/11/26/salat-s-krabovymi-palochkami-i-kukuruzoj-1.png",
     topics: ["риба", "майонез", "кукурудза"],
-    ingredients: [],
+    ingredients: [
+      {name: "Крабові палички", count: "100", unit: "г"},
+      {name: "Кукурудза", count: "100", unit: "г"},
+      {name: "Огірки", count: "50", unit: "г"},
+      {name: "Яйця", count: "1", unit: "шт"},
+      {name: "Майонез", count: "100", unit: "г"},
+      {name: "Цибуля 'Марс' ", count: "15", unit: "г"},
+    ],
     steps: []
   },
   {
     id: '2',
     title: "Грецький салат",
     description: "салат з сиром фета та маслинами...",
-    price: 350,
+    price: 400,
     time: 30,
     url: "https://i.imgur.com/I5vEgD5_d.webp?maxwidth=1520&fidelity=grand1",
     topics: ["фета", "маслини", "здорове харчування"],

@@ -1,5 +1,5 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {ActivatedRoute, Router} from "@angular/router";
+import {ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {ActivatedRoute} from "@angular/router";
 import {mocked, MockedDishes} from "../../../core/mockedDishes";
 import {Subscription} from "rxjs";
 import {SummaryService} from "../../summary/services/summary.service";
@@ -8,17 +8,31 @@ import {SearchService} from "../../main/services/search.service";
 @Component({
   selector: 'app-detail',
   templateUrl: './detail.component.html',
-  styleUrls: ['./detail.component.scss']
+  styleUrls: ['./detail.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DetailComponent implements OnInit {
   @Input() dish: MockedDishes
+  @Output() changeServ = new EventEmitter<number>;
+
   servings = 3
 
   constructor(private route: ActivatedRoute, private summaryService: SummaryService, private mocked: SearchService) {
   }
+  addServ() {
+    this.servings += 1
+    this.changeServ.emit(this.dish.price / 3)
+  }
 
   removeServ() {
-    this.servings = this.servings === 1 ? this.servings : this.servings - 1
+    if (this.servings === 1) {
+      return
+    }
+    const x = () => {
+      this.servings -= 1
+      this.changeServ.emit(-(this.dish.price / 3))
+    }
+    x()
   }
 
   addToList() {

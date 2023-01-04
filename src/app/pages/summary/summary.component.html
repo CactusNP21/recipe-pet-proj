@@ -1,8 +1,31 @@
-<ng-container *ngFor="let dish of test$| async">
-  <app-detail [dish]="dish">
+<div>
+  <div class="header">
+    <h2>Статистика</h2>
+    <mat-list>
+      <mat-list-item>
+        <div class="summary">
+          <mat-icon matListItemIcon color="primary">money</mat-icon>
+          <p>{{totalPrice | currency: "₴"}}</p>
+        </div>
+      </mat-list-item>
+    </mat-list>
+  </div>
+  <mat-accordion>
+    <ng-container *ngFor="let dish of summary$ | async">
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          {{dish.title}}
+        </mat-expansion-panel-header>
+        <app-detail [dish]="dish" (changeServ)="totalPrice = totalPrice + $event">
 
-  </app-detail>
-</ng-container>
+        </app-detail>
+      </mat-expansion-panel>
+
+    </ng-container>
+  </mat-accordion>
+</div>
+
+
 
 
 

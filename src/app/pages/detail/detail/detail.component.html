@@ -16,7 +16,7 @@
           <div>Порцій:</div>
           <mat-form-field appearance="outline" subscriptSizing="fixed">
             <input matInput type="number" [(ngModel)]="servings" disabled>
-            <button matSuffix mat-icon-button (click)="servings = servings + 1">
+            <button matSuffix mat-icon-button (click)="addServ()">
               <mat-icon>add</mat-icon>
             </button>
             <button matPrefix mat-icon-button (click)="removeServ()">
@@ -33,12 +33,14 @@
         <mat-list>
           <mat-list-item *ngFor="let ingredients of dish.ingredients">
             <mat-icon matListItemIcon color="primary">horizontal_rule</mat-icon>
-            <div class="ingredient">{{ingredients.name}}: <span class="highlight">{{+ingredients.count * servings}} {{ingredients.unit}}</span></div>
+            <div class="ingredient">{{ingredients.name}}: <span
+              class="highlight">{{+ingredients.count * servings}} {{ingredients.unit}}</span></div>
           </mat-list-item>
           <mat-divider></mat-divider>
           <mat-list-item>
             <mat-icon matListItemIcon color="primary">money</mat-icon>
-            <div class="ingredient">Оціночна вартість: <span class="price">{{dish.price / 3 * servings | currency: "₴"}}</span></div>
+            <div class="ingredient">Оціночна вартість: <span
+              class="price">{{dish.price / 3 * servings | currency: "₴"}}</span></div>
           </mat-list-item>
         </mat-list>
 
