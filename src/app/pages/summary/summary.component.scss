@@ -7,10 +7,20 @@
 .summary {
   display: flex;
   align-items: center;
-  justify-content: left;
+  justify-content: center;
   gap: 1rem;
   p {
     color: darkgreen;
     margin: 0;
   }
+}
+mat-list-item {
+  height: auto !important;
+}
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+  align-items: center;
+  justify-content: center;
 }

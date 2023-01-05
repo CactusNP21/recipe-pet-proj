@@ -3,9 +3,12 @@
     <h2>Статистика</h2>
     <mat-list>
       <mat-list-item>
-        <div class="summary">
-          <mat-icon matListItemIcon color="primary">money</mat-icon>
-          <p>{{totalPrice | currency: "₴"}}</p>
+        <div class="actions">
+          <button (click)="openDialog()" mat-raised-button color="primary">Список інгредієнтів</button>
+          <div class="summary">
+            <mat-icon matListItemIcon color="primary">money</mat-icon>
+            <p>{{totalPrice | currency: "₴"}}</p>
+          </div>
         </div>
       </mat-list-item>
     </mat-list>
@@ -16,7 +19,7 @@
         <mat-expansion-panel-header>
           {{dish.title}}
         </mat-expansion-panel-header>
-        <app-detail [dish]="dish" (changeServ)="totalPrice = totalPrice + $event">
+        <app-detail [dish]="dish" (changeServ)="changeServ($event)">
 
         </app-detail>
       </mat-expansion-panel>

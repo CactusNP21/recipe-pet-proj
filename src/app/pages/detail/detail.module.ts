@@ -10,12 +10,12 @@ import {MatSidenavModule} from "@angular/material/sidenav";
 import {MatInputModule} from "@angular/material/input";
 import {FormsModule} from "@angular/forms";
 import {MatExpansionModule} from "@angular/material/expansion";
-
+import {DetailRoutingModule} from "./detail-routing.module";
 
 
 @NgModule({
     declarations: [
-        DetailComponent
+        DetailComponent,
     ],
     exports: [
         DetailComponent
@@ -30,7 +30,8 @@ import {MatExpansionModule} from "@angular/material/expansion";
     MatSidenavModule,
     MatInputModule,
     FormsModule,
-    MatExpansionModule
+    MatExpansionModule,
+    DetailRoutingModule
   ]
 })
 export class DetailModule { }

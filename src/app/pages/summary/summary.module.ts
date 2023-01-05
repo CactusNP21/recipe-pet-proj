@@ -1,11 +1,14 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {CommonModule} from '@angular/common';
 import { SummaryComponent } from './summary.component';
-import {DetailModule} from "../detail/detail.module";
 import {MatExpansionModule} from "@angular/material/expansion";
 import {MatListModule} from "@angular/material/list";
+import { IngredientsDialogComponent } from './ingredients-dialog/ingredients-dialog.component';
+import {MatDialogModule} from "@angular/material/dialog";
+import {MatButtonModule} from "@angular/material/button";
+import {SummaryRoutingModule} from "./summary-routing.module";
 import {MatIconModule} from "@angular/material/icon";
-import { IngredientsDialogComponent } from './ingridients-dialog/ingredients-dialog.component';
+import {DetailModule} from "../detail/detail.module";
 
 
 
@@ -19,11 +22,14 @@ import { IngredientsDialogComponent } from './ingridients-dialog/ingredients-dia
     SummaryComponent
   ],
   imports: [
-    CommonModule,
-    DetailModule,
-    MatExpansionModule,
+    SummaryRoutingModule,
     MatListModule,
     MatIconModule,
+    MatExpansionModule,
+    MatDialogModule,
+    CommonModule,
+    DetailModule,
+    MatButtonModule
   ]
 })
 export class SummaryModule { }

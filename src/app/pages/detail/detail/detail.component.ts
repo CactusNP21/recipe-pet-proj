@@ -13,7 +13,7 @@ import {SearchService} from "../../main/services/search.service";
 })
 export class DetailComponent implements OnInit {
   @Input() dish: MockedDishes
-  @Output() changeServ = new EventEmitter<number>;
+  @Output() changeServ = new EventEmitter<MockedDishes>;
 
   servings = 3
 
@@ -21,7 +21,8 @@ export class DetailComponent implements OnInit {
   }
   addServ() {
     this.servings += 1
-    this.changeServ.emit(this.dish.price / 3)
+    this.dish.servings += 1
+    this.changeServ.emit(this.dish)
   }
 
   removeServ() {
@@ -30,7 +31,8 @@ export class DetailComponent implements OnInit {
     }
     const x = () => {
       this.servings -= 1
-      this.changeServ.emit(-(this.dish.price / 3))
+      this.dish.servings -= 1
+      this.changeServ.emit(this.dish)
     }
     x()
   }

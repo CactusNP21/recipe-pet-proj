@@ -8,6 +8,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MainModule} from "./pages/main/main.module";
 import {DetailModule} from "./pages/detail/detail.module";
 import {FeatureModule} from "./feature/feature.module";
+import {SummaryModule} from "./pages/summary/summary.module";
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import {FeatureModule} from "./feature/feature.module";
     BrowserAnimationsModule,
     DetailModule,
     MainModule,
+    SummaryModule,
     FeatureModule
   ],
   providers: [],

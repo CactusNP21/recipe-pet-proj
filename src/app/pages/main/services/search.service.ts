@@ -15,6 +15,7 @@ export class SearchService {
   searchOptionsSubject = new Subject<SearchOptions>()
   searchOptions$ = this.searchOptionsSubject.asObservable();
   searchOptions: SearchOptions = defaultSearchOption;
+  lastSearchValue: MockedDishes[] = []
   value: string = ''
 
   private between(min: number, max: number, number: number): boolean {
@@ -49,7 +50,12 @@ export class SearchService {
     console.log(mocked)
   }
   search() {
-    const filtered = mocked.filter(dish => {
+    if (this.lastSearchValue.length > 0) {
+      console.log('2222')
+      this.dishes.next(this.lastSearchValue)
+      return
+    }
+    this.lastSearchValue = mocked.filter(dish => {
       const {minMinutes, maxMinutes, minPrice, maxPrice, topics} = this.searchOptions
       return (
         this.between(minPrice, maxPrice, dish.price) &&
@@ -58,7 +64,7 @@ export class SearchService {
         topics.every((value1) => dish.topics.includes(value1.toLowerCase()))
       )
     })
-    this.dishes.next(filtered)
+    this.dishes.next(this.lastSearchValue)
   }
 
   sendSearchOptions(value: SearchOptions) {

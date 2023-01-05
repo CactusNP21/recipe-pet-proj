@@ -1,7 +1,9 @@
 import {AfterViewInit, Component} from '@angular/core';
 import {SummaryService} from "./services/summary.service";
-import {Ingredients, MockedDishes} from "../../core/mockedDishes";
+import {Ingredients, mocked, MockedDishes} from "../../core/mockedDishes";
 import {Observable} from "rxjs";
+import {MatDialog} from "@angular/material/dialog";
+import {IngredientsDialogComponent} from "./ingredients-dialog/ingredients-dialog.component";
 
 @Component({
   selector: 'app-summary',
@@ -14,26 +16,41 @@ export class SummaryComponent implements AfterViewInit {
   totalIngredients: Ingredients[] = []
   summary$: Observable<MockedDishes[]> = this.summaryService.summary$
 
-  constructor(private summaryService: SummaryService) {
+  constructor(private summaryService: SummaryService, private dialog: MatDialog) {
     this.summary = this.summaryService.getSummary()
     this.totalPrice = this.summary.reduce((accumulator, currentValue) => {
-      return accumulator + currentValue.price
+      return accumulator + currentValue.price * currentValue.servings
     }, 0)
-      // this.totalIngredients = this.calculateIngredients(mocked)
   }
 
+  openDialog() {
+    this.totalIngredients = this.calculateIngredients(mocked)
+    this.dialog.open(IngredientsDialogComponent, {
+      data: this.totalIngredients
+    })
+  }
+  changeServ(dish: MockedDishes) {
+    this.summary.find(value => value.id === dish.id)!.servings = dish.servings
+    this.totalPrice = this.summary.reduce((accumulator, currentValue) => {
+      return accumulator + currentValue.price * currentValue.servings
+    }, 0)
+  }
   calculateIngredients(dishes: MockedDishes[]): Ingredients[] {
-    const overall: Ingredients[] = []
-    let x = {}
+    let total: Ingredients[] = []
     for (const dish of dishes) {
-      x = Object.assign({}, x, dish.ingredients)
-      for (const ingredients of dish.ingredients) {
-
-      }
-
+      const ingredients = dish.ingredients.map(value => {
+          const container: Ingredients = JSON.parse(JSON.stringify(value))
+          container.count *= dish.servings
+          return container
+        }
+      )
+      total = [...total, ...ingredients]
     }
-    console.log(x)
-    return overall
+    return Object.values(total.reduce((current: { [index: string]: Ingredients }, {name, count, unit}) => {
+      current[name] = current[name] || {name, count: 0, unit};
+      current[name].count += +count
+      return current;
+    }, {}));
   }
 
   ngAfterViewInit() {

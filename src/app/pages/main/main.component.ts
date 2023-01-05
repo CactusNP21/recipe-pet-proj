@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit} from '@angular/core';
-import {mocked, MockedDishes} from "../../core/mockedDishes";
+import { MockedDishes} from "../../core/mockedDishes";
 import {PageEvent} from "@angular/material/paginator";
 import {SearchService} from "./services/search.service";
 import {Subject, Subscription} from "rxjs";
@@ -18,7 +18,7 @@ export class MainComponent implements OnInit, OnDestroy{
   dishes: MockedDishes[] = []
   sub: Subscription
   constructor(private search: SearchService,) {
-    this.sub = search.getDishes().subscribe(dishes => {
+    this.sub = search.getDishes().subscribe(dishes => { //TODO RESOLVER
       this.dishes = dishes
       this.pageItems = dishes.length
       this.dishesSubject.next(dishes.slice(0, this.pageSize))

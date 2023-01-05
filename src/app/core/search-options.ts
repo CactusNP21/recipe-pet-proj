@@ -8,7 +8,7 @@ export interface SearchOptions {
 
 export const defaultSearchOption: SearchOptions = {
   maxPrice: 1000,
-  minPrice: 100,
+  minPrice: 0,
   minMinutes: 15,
   maxMinutes: 240,
   topics: []
