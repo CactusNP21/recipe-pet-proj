@@ -24,7 +24,7 @@ export class SummaryComponent implements AfterViewInit {
   }
 
   openDialog() {
-    this.totalIngredients = this.calculateIngredients(mocked)
+    this.totalIngredients = this.calculateIngredients(this.summary)
     this.dialog.open(IngredientsDialogComponent, {
       data: this.totalIngredients
     })
