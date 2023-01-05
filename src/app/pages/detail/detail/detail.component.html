@@ -40,7 +40,7 @@
           <mat-list-item>
             <mat-icon matListItemIcon color="primary">money</mat-icon>
             <div class="ingredient">Оціночна вартість: <span
-              class="price">{{dish.price / 3 * servings | currency: "₴"}}</span></div>
+              class="price">{{dish.price * servings | currency: "₴"}}</span></div>
           </mat-list-item>
         </mat-list>
 
